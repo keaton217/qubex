@@ -1,5 +1,10 @@
-Q2A:
-  name: "..."
+qube104:
+  name: "qube104"
   type: "quel1-a"
-  address: "10.0.x.x"
+  address: "10.1.0.46"
+  adapter: "..."
+qube106:
+  name: "qube106"
+  type: "quel1-a"
+  address: "10.1.0.48"
   adapter: "..."
