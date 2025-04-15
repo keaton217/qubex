@@ -1425,12 +1425,13 @@ class CharacterizationMixin(
                         phase = phase - freq * phase_shift - phase_offset
                         signal = ampl * np.exp(1j * phase)
                         signals.append(signal)
-                        phases.append(phase)  # type: ignore
+                        phases.append(np.angle(signal))  # type: ignore
 
                         idx += 1
 
         phases_unwrap = np.unwrap(phases)
-        phases_diff = np.abs(np.diff(phases_unwrap))
+        # phases_diff = np.abs(np.diff(phases_unwrap))
+        phases_diff = np.gradient(phases_unwrap)
 
         fig1 = make_subplots(
             rows=2,
